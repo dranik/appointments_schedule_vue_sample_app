@@ -49,16 +49,6 @@ export default {
 }
 </script>
 <style lang="scss">
-body {
-  :root {
-  --white: hsl(0, 0%, 100%);
-  --blue-grey: hsl(210, 28%, 85%);
-  --grey: hsl(0, 0%, 96%);
-  --black: hsl(0, 0%, 20%);
-}
-
-
-
 .schedule {
   border: 1px solid var(--blue-grey);
   display: grid;
@@ -121,6 +111,5 @@ body {
 
 .text-center {
   text-align: center;
-}
 }
 </style>

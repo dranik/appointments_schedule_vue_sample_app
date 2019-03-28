@@ -10,12 +10,13 @@
       <button @click="nextMonth" v-if='month!="december"'>&gt;&gt;</button>
       <button v-else></button>
     </header>
-    <div class="headings" v-for="dayLabel in dayLabels">
+    <div class="headings" v-for="dayLabel in dayLabels" v-bind:key='dayLabel'>
       {{ dayLabel }}
     </div>
     <div v-for="(day) in daysArray"
          class="day"
-         :class="dayClassObj(day)">
+         :class="dayClassObj(day)"
+          v-bind:key='day.date'>
       <button @click="setSelectedDate(day)">
         {{ day.date.date() }}
       </button>
@@ -115,16 +116,6 @@ export default {
 }
 </script>
 <style lang="scss">
-body {
-  :root {
-  --white: hsl(0, 0%, 100%);
-  --blue-grey: hsl(210, 28%, 85%);
-  --grey: hsl(0, 0%, 96%);
-  --black: hsl(0, 0%, 20%);
-}
-
-
-
 .calendar {
   border: 1px solid var(--blue-grey);
   display: grid;
@@ -202,6 +193,5 @@ body {
 
 .text-center {
   text-align: center;
-}
 }
 </style>
