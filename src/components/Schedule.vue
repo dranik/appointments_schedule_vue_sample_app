@@ -6,7 +6,7 @@
     <div v-for="(slot) in slots"
          class="slot"
          :class="slot.occupied ? 'crossedout' : ''"
-         v-bind:key = 'time'>
+         v-bind:key = 'slot.time'>
       <button @click="slot.occupied ? '' : occupy(slot.time)">
         {{ slot.time.format('HH:mm') }}
       </button>
